@@ -15,5 +15,32 @@ public class Person {
         this.weight = weight;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public SimpleDate getBirthday() {
+        return this.birthday;
+    }
+
     // implement an equals method here for checking the equality of objects
+    public boolean equals (Object compared) {
+        if(this == compared) return true;
+        if(compared instanceof Person) {
+            Person p = (Person) compared;
+            if(this.getName().equals(p.getName()) && this.height == p.getHeight() && this.weight == p.getWeight() 
+            && this.birthday.equals(p.getBirthday())) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
